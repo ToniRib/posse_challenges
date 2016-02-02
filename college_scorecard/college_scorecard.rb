@@ -22,6 +22,19 @@ class CollegeScorecard
     sorted_data = data.sort_by { |row| row[:avgfacsal].to_i }.reverse
     sorted_data.map { |row| row[:instnm] }.first(num)
   end
+
+  def median_debt_between(low_value, high_value)
+    data.map do |row|
+      if debt_is_within_range(row[:grad_debt_mdn].to_i,
+                              low_value, high_value)
+        "#{row[:instnm]} ($#{row[:grad_debt_mdn]})"
+      end
+    end.compact
+  end
+
+  def debt_is_within_range(debt, low_value, high_value)
+    debt > low_value && debt < high_value
+  end
 end
 
 college_scorecard = CollegeScorecard.new
@@ -31,4 +44,6 @@ when "by_state"
   puts college_scorecard.by_state(ARGV[1])
 when "top_average_faculty_salary"
   puts college_scorecard.top_average_faculty_salary(ARGV[1].to_i)
+when "median_debt_between"
+  puts college_scorecard.median_debt_between(ARGV[1].to_i, ARGV[2].to_i)
 end
