@@ -15,7 +15,7 @@ class CollegeScorecard
   end
 
   def by_state(state)
-    data.map { |row| row[:instnm] if row[:stabbr] == state}.compact
+    data.map { |row| row[:instnm] if row[:stabbr] == state }.compact
   end
 
   def top_average_faculty_salary(num)
@@ -24,12 +24,10 @@ class CollegeScorecard
   end
 
   def median_debt_between(low_value, high_value)
-    data.map do |row|
-      if debt_is_within_range(row[:grad_debt_mdn].to_i,
-                              low_value, high_value)
-        "#{row[:instnm]} ($#{row[:grad_debt_mdn]})"
-      end
-    end.compact
+    ranged_data = data.select do |row|
+      debt_is_within_range(row[:grad_debt_mdn].to_i, low_value, high_value)
+    end
+    ranged_data.map { |row| "#{row[:instnm]} ($#{row[:grad_debt_mdn]})" }
   end
 
   def debt_is_within_range(debt, low_value, high_value)
