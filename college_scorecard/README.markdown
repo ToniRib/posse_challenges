@@ -26,6 +26,8 @@ AVTEC-Alaska's Institute of Technology
 Charter College-Anchorage
 Prince William Sound Community College
 Alaska Career College
+Ilisagvik College
+Alaska Christian College
 ```
 
 ### 2: Filter By Top Average Faculty Salary
@@ -84,6 +86,7 @@ Choose a second language (Python, R, etc.) and implement *at least one* of the a
 
 Getting started with R:
 
+* [Install R](https://cran.r-project.org/)
 * Download [RStudio](https://www.rstudio.com/products/rstudio/download/)
 * Open RStudio. In the menu "Session", hover over "Set Working Directory" and click "Choose Directory". Find where you've saved the `2013_college_scorecards.csv` file, and choose that directory.
 * To read a csv, use `read.csv('2013_college_scorecards.csv')`. 
