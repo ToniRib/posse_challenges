@@ -19,8 +19,8 @@ class CollegeScorecard
   end
 
   def top_average_faculty_salary(num)
-    sorted_data = data.sort_by { |row| row[:avgfacsal].to_i }.reverse
-    sorted_data.map { |row| row[:instnm] }.first(num)
+    sorted_data = data.sort_by { |row| row[:avgfacsal].to_i }
+    sorted_data.map { |row| row[:instnm] }.last(num).reverse
   end
 
   def median_debt_between(low_value, high_value)
