@@ -6,7 +6,7 @@ def uppercase?(letter)
 end
 
 def punctuation?(letter)
-  /[?!@#$%^&*()_-+~`<>,.?:;"'{}]/ =~ letter
+  /[?!.]/ =~ letter
 end
 
 key = ARGF.argv.shift.to_i
