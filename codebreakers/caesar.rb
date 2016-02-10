@@ -30,7 +30,9 @@ class Caesar
   end
 
     def encrypt_message
-      message.chars.flatten.map {|mssg| cypher[mssg]}
+      parsed_mssg = message.join(" ")
+      encrypted_mssg = parsed_mssg.chars.map {|mssg| cypher[mssg]}.join(" ")
+      puts encrypted_mssg
     end
   end
 
