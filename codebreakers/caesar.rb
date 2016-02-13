@@ -31,12 +31,11 @@ class Caesar
 
   def encrypt_message
     parsed_mssg = message.join(" ")
-    encrypted_mssg = parsed_mssg.chars.map {|mssg| cypher[mssg] }.join
-    puts encrypted_mssg
+    parsed_mssg.chars.map {|mssg| cypher[mssg] }.join
   end
 end
 
 if __FILE__ == $0
-c = Caesar.new(ARGV[0], ARGV[1..-1])
-c.encrypt_message
+  c = Caesar.new(ARGV[0], ARGV[1..-1])
+  puts c.encrypt_message
 end

@@ -11,6 +11,6 @@ class Initials
 end
 
 if __FILE__ == $0
-i = Initials.new(ARGV[0..-1])
-p i.get_initials
+  i = Initials.new(ARGV[0..-1])
+  puts i.get_initials
 end
