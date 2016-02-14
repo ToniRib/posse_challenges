@@ -23,7 +23,7 @@ CRJ
 
 ```
 
-You can feel free to make some assumptions here. For example, you can assume that each person will have a space between each of their names and you won't have to deal with any punctuation. 
+You can feel free to make some assumptions here. For example, you can assume that each person will have a space between each of their names and you won't have to deal with any punctuation.
 
 Rest assured that Conan O'Brien (Ew.) or Joseph Gordon-Levitt or Julia Louis-Dreyfus will not be using your program.
 
@@ -57,7 +57,7 @@ Tycr Wotsk sc combodvi yxo rkvp yp Nkpd Zexu.
 
 ```
 
-We run the program by typing in ruby and the name of your file, then we give it the key, and then our plaintext. 
+We run the program by typing in ruby and the name of your file, then we give it the key, and then our plaintext.
 
 
 ### Iteration 3 - The Worst
@@ -68,9 +68,9 @@ This isn't very secure. You just need to try to decode it a maximum of 26 ways a
 
 So the next step in complexity is the Vigenère Cipher, a polyalphabetic substitution cipher.
 
-Fun Fact - the cipher was named after the Blaise de Vigenère, who didn't even invent it. 
+Fun Fact - the cipher was named after the Blaise de Vigenère, who didn't even invent it.
 
-The main difference between this cipher and the previous cipher is that we aren't using a single key here. 
+The main difference between this cipher and the previous cipher is that we aren't using a single key here.
 
 With Caesar, we shifted all of the letters by the same value, or key.
 
@@ -84,7 +84,7 @@ Our interaction model would look like this:
 ```
 $ ruby vigenere.rb taylor Make PHP great again.
 
-Faip DYI gppok tgytb.
+Gbjq EZJ hqqpl uhzuc.
 ```  
 
 Bonus Fun Fact: The Confederacy actually used this cipher during the Civil War. The problem was that they only really used three different key phrases. As you may have guessed, the Union was reading their mail on the regular. This is the 19th century equivalent of using "password" as your password.
