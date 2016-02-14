@@ -14,23 +14,15 @@ class Vigenere
 
   def encrypt_message
     encrypted = ""
-    i = -1
+    i = 0
 
     message.chars.each do |l|
       if letter_map.include?(l)
-        i = i + 1
-        num = convert_letter_to_number(l.downcase)
-        this_key = get_key_number(i)
-        new_index = (num + this_key) % 26
-        new_index = 26 if new_index == 0
-        encrypted << letter_map.key(new_index)
-      elsif letter_map.include?(l.downcase)
-        i = i + 1
-        num = convert_letter_to_number(l.downcase)
-        this_key = get_key_number(i)
-        new_index = (num + this_key) % 26
-        new_index = 26 if new_index == 0
-        encrypted << letter_map.key(new_index).upcase
+        letter, i = find_new_letter(l, i)
+        encrypted << letter
+      elsif capital?(l)
+        letter, i = find_new_letter(l, i)
+        encrypted << letter.upcase
       else
         encrypted << l
       end
@@ -39,8 +31,23 @@ class Vigenere
     encrypted
   end
 
+  def find_new_letter(letter, i)
+    num = convert_letter_to_number(letter.downcase)
+    this_key = get_key_number(i)
+    i = i + 1
+
+    new_index = (num + this_key) % 26
+    new_index = 26 if new_index == 0
+
+    [letter_map.key(new_index), i]
+  end
+
   def convert_letter_to_number(letter)
     letter_map[letter]
+  end
+
+  def capital?(letter)
+    letter_map.include?(letter.downcase)
   end
 
   def get_key_number(i)
