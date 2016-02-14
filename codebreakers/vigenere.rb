@@ -8,23 +8,23 @@ class Vigenere
     @message = message
   end
 
-  def letter_map
-    [*"a".."z"].zip([*1..26]).to_h
-  end
-
   def encrypt_message
     i = -1
 
-    encrypted = message.chars.map do |l|
+    message.chars.map do |l|
       if letter_is_part_of_alphabet(l)
         i = i + 1
         capital?(l) ? encrypt(l, i).upcase : encrypt(l, i)
       else
         l
       end
-    end
+    end.join
+  end
 
-    encrypted.join
+  private
+
+  def letter_map
+    [*"a".."z"].zip([*1..26]).to_h
   end
 
   def encrypt(letter, i)
