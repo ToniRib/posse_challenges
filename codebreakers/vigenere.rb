@@ -29,9 +29,8 @@ class Vigenere
 
   def encrypt(letter, i)
     num = convert_letter_to_number(letter.downcase)
-    this_key = get_key_number(i)
 
-    new_index = (num + this_key) % 26
+    new_index = (num + get_key_number(i)) % 26
     new_index = 26 if new_index == 0
 
     letter_map.key(new_index)
