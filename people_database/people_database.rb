@@ -16,13 +16,17 @@ class PeopleDatabase
   def remove_by_email(email_address)
     @people.delete_if { |person| person.email == email_address }
   end
+
+  def lives_in_state(state)
+    @people.select { |person| person.state == state }
+  end
 end
 
 if __FILE__ == $0
   people = [Person.new(first_name: "Toni",
                        last_name:  "Rib",
                        email:      "toni@example.com",
-                       state:      "CO"),
+                       state:      "CA"),
             Person.new(first_name: "Admir",
                        last_name:  "Draganovic",
                        email:      "admir@example.com",
@@ -36,4 +40,6 @@ if __FILE__ == $0
   p people_db
   people_db.remove_by_email("tess@turing.io")
   p people_db
+  p people_db.lives_in_state("CA")
+  p people_db.lives_in_state("CO")
 end
