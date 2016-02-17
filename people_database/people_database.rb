@@ -24,6 +24,10 @@ class PeopleDatabase
   def email_list
     @people.map { |person| person.email }.join(", ")
   end
+
+  def count_from_state(state)
+    lives_in_state(state).size
+  end
 end
 
 if __FILE__ == $0
@@ -47,4 +51,5 @@ if __FILE__ == $0
   p people_db.lives_in_state("CA")
   p people_db.lives_in_state("CO")
   puts people_db.email_list
+  puts people_db.count_from_state("CA")
 end
