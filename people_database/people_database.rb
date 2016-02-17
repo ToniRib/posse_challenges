@@ -20,6 +20,10 @@ class PeopleDatabase
   def lives_in_state(state)
     @people.select { |person| person.state == state }
   end
+
+  def email_list
+    @people.map { |person| person.email }.join(", ")
+  end
 end
 
 if __FILE__ == $0
@@ -42,4 +46,5 @@ if __FILE__ == $0
   p people_db
   p people_db.lives_in_state("CA")
   p people_db.lives_in_state("CO")
+  puts people_db.email_list
 end
