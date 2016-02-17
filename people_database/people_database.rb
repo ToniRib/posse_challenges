@@ -12,6 +12,10 @@ class PeopleDatabase
                           email:      email,
                           state:      state)
   end
+
+  def remove_by_email(email_address)
+    @people.delete_if { |person| person.email == email_address }
+  end
 end
 
 if __FILE__ == $0
@@ -29,5 +33,7 @@ if __FILE__ == $0
                 last_name:  "Griffin",
                 email:      "tess@turing.io",
                 state:      "CO")
-  binding.pry
+  p people_db
+  people_db.remove_by_email("tess@turing.io")
+  p people_db
 end
