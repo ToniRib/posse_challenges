@@ -2,6 +2,8 @@ require "pry"
 require_relative "person"
 
 class PeopleDatabase
+  attr_reader :people
+
   def initialize(people)
     @people = people
   end
@@ -14,15 +16,15 @@ class PeopleDatabase
   end
 
   def remove_by_email(email_address)
-    @people.delete_if { |person| person.email == email_address }
+    people.delete_if { |person| person.email == email_address }
   end
 
   def lives_in_state(state)
-    @people.select { |person| person.state == state }
+    people.select { |person| person.state == state }
   end
 
   def email_list
-    @people.map { |person| person.email }.join(", ")
+    people.map { |person| person.email }.join(", ")
   end
 
   def count_from_state(state)
