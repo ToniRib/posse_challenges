@@ -1,4 +1,4 @@
-class Enum
+class Enums
   def self.any?(collection, condition)
     condition_flag = false
 
@@ -7,5 +7,15 @@ class Enum
     end
 
     condition_flag
+  end
+
+  def self.select(collection, condition)
+    selected_items = []
+
+    collection.each do |n|
+      selected_items << n if condition.call(n) == true
+    end
+
+    selected_items
   end
 end
