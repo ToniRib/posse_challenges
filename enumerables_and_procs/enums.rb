@@ -18,4 +18,18 @@ class Enums
 
     selected_items
   end
+
+  def self.reduce(collection, condition)
+
+  end
+
+  def self.reject(collection, condition)
+    selected_items = []
+
+    collection.each do |n|
+      selected_items << n if condition.call(n) == false
+    end
+
+    selected_items
+  end
 end

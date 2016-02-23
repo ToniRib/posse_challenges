@@ -19,7 +19,7 @@ loops.
 
 ## Iteration 1
 
-Build a method that behaves like the enumarator `any`.
+Build a method that behaves like the enumerator `any`.
 
 ```rb
 ages = [12, 11, 13, 14, 16, 20]
