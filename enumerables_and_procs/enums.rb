@@ -19,10 +19,6 @@ class Enums
     selected_items
   end
 
-  def self.reduce(collection, condition)
-
-  end
-
   def self.reject(collection, condition)
     selected_items = []
 
